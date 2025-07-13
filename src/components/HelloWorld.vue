@@ -1,8 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>{{ backendMessage }}</p>
-    <button @click="fetchBackendMessage">백엔드 메시지 가져오기</button>
+    <h1>{{ backendMessage }}</h1>
   </div>
 </template>
 
@@ -12,11 +10,10 @@ import axios from 'axios';
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
   },
   data() {
     return {
-      backendMessage: '메시지를 기다리는 중...'
+      backendMessage: ''
     };
   },
   methods: {
@@ -34,24 +31,11 @@ export default {
   },
   mounted() {
     // 컴포넌트 마운트 시 자동으로 메시지를 가져오려면 아래 주석을 해제하세요.
-    // this.fetchBackendMessage();
+    this.fetchBackendMessage();
   }
 }
 </script>
 
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
